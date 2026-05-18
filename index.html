@@ -1,115 +1,456 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kelani AbdulGaniyy Olamide — Digital Marketer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title>Kelani AbdulGaniyy Olamide — Marketing Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#f6f8fb;
+      --card:rgba(255,255,255,.72);
+      --text:#0f172a;
+      --muted:#64748b;
+      --accent:#4f46e5;
+      --soft:#eef2ff;
+      --line:rgba(15,23,42,.08);
+      --shadow:0 20px 60px rgba(15,23,42,.08);
+    }
+    body{
+      font-family:'Inter',sans-serif;
+      background:
+      radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(14,165,233,.08), transparent 30%),
+      var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(18px);
+      background:rgba(246,248,251,.75);
+      border-bottom:1px solid rgba(255,255,255,.5);
+    }
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 0;
+    }
+    .logo{font-weight:800;letter-spacing:-.04em}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{color:var(--muted);font-size:.95rem}
+    .hero{padding:110px 0 80px}
+    .hero-card{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.6);
+      backdrop-filter:blur(20px);
+      border-radius:36px;
+      padding:70px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card::before{
+      content:'';
+      position:absolute;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      background:rgba(79,70,229,.08);
+      top:-260px;
+      right:-160px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:50px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:var(--soft);
+      color:var(--accent);
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:.88rem;
+      font-weight:600;
+      margin-bottom:24px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    h1{
+      font-size:clamp(3.5rem,8vw,6rem);
+      line-height:.92;
+      letter-spacing:-.08em;
+      margin-bottom:28px;
+    }
+    .hero-text{
+      max-width:620px;
+      color:var(--muted);
+      font-size:1.08rem;
+      margin-bottom:38px;
+    }
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-primary,.btn-secondary{
+      padding:15px 22px;
+      border-radius:16px;
+      font-weight:600;
+    }
+    .btn-primary{background:#111827;color:#fff}
+    .btn-secondary{border:1px solid var(--line);background:rgba(255,255,255,.7)}
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .stat{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.6);
+      padding:28px;
+      border-radius:24px;
+      backdrop-filter:blur(12px);
+    }
+    .stat h2{
+      font-size:2.5rem;
+      letter-spacing:-.06em;
+      margin-bottom:6px;
+    }
+    .stat p{color:var(--muted)}
+    section{padding:90px 0}
+    .section-title{
+      font-size:2.5rem;
+      letter-spacing:-.06em;
+      margin-bottom:18px;
+    }
+    .section-sub{
+      color:var(--muted);
+      max-width:720px;
+      margin-bottom:48px;
+      font-size:1.02rem;
+    }
+    .services-grid,.portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+    .service-card,.portfolio-card,.about-card,.contact-card{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.6);
+      border-radius:28px;
+      padding:32px;
+      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
+    }
+    .service-icon{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      background:var(--soft);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:22px;
+      font-size:1.4rem;
+    }
+    .service-card h3,.portfolio-card h3{
+      font-size:1.3rem;
+      margin-bottom:12px;
+      letter-spacing:-.04em;
+    }
+    .service-card p,.portfolio-card p,.about-card p,.contact-card p{
+      color:var(--muted);
+    }
+    .about-grid,.contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(15,23,42,.05);
+      color:var(--muted);
+      font-size:.82rem;
+      font-weight:500;
+    }
+    .case-study{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+    .case-study strong{display:block;margin-bottom:8px}
+    .contact-links{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:28px;
+    }
+    .contact-link{
+      padding:18px 20px;
+      border-radius:18px;
+      background:rgba(15,23,42,.04);
+      font-weight:500;
+    }
+    footer{
+      padding:40px 0 70px;
+      text-align:center;
+      color:var(--muted);
+    }
+    @media(max-width:1024px){
+      .hero-grid,.about-grid,.contact-grid,.services-grid,.portfolio-grid{
+        grid-template-columns:1fr;
+      }
+      .hero-card{padding:40px}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none}
+      h1{font-size:3.2rem}
+      .hero-card{padding:28px;border-radius:28px}
+      .hero-stats{grid-template-columns:1fr}
+      section{padding:70px 0}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Kelani Olamide</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              <span class="dot"></span>
+              Available for projects
+            </div><h1>
+          Marketing that
+          earns attention
+          and converts.
+        </h1>
 
-    :root {
-      --ink: #0d0d0d;
-      --cream: #f7f3ec;
-      --warm: #e8e0d2;
-      --gold: #b8892a;
-      --gold-light: #d4a843;
-      --muted: #6b6459;
-      --white: #ffffff;
-    }
+        <p class="hero-text">
+          I help brands grow through paid ads, social media management, strategic content, and modern creative systems designed for today's digital audience.
+        </p>
 
-    html { scroll-behavior: smooth; }
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-primary">View Portfolio</a>
+          <a href="#contact" class="btn-secondary">Let's Work</a>
+        </div>
+      </div>
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      overflow-x: hidden;
-    }
+      <div class="hero-stats">
+        <div class="stat">
+          <h2>4+</h2>
+          <p>Years Experience</p>
+        </div>
 
-    /* ── NOISE TEXTURE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.35;
-    }
+        <div class="stat">
+          <h2>5+</h2>
+          <p>Brands Worked With</p>
+        </div>
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.4rem 4rem;
-      background: rgba(247,243,236,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(184,137,42,0.15);
-      transition: all 0.3s ease;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--ink);
-    }
-    .nav-logo span { color: var(--gold); }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.6rem 1.4rem;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-    .nav-cta:hover {
-      background: var(--gold);
-      color: var(--white);
-    }
+        <div class="stat">
+          <h2>3x</h2>
+          <p>Average Engagement Growth</p>
+        </div>
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 10rem 4rem 6rem 4rem;
-      position: relative;
-      z-index: 2;
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
+        <div class="stat">
+          <h2>Meta</h2>
+          <p>Ads Specialist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">
+        Digital marketer focused on helping brands communicate better, convert more customers, and build stronger online presence through strategy-led execution.
+      </p><div class="about-grid">
+    <div class="about-card">
+      <h3 style="margin-bottom:16px;font-size:1.4rem">What I Bring</h3>
+      <p>
+        I've worked with startups, educational platforms, product-focused businesses, and service brands — helping them improve visibility, create stronger campaigns, and build content people genuinely engage with.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h3 style="margin-bottom:16px;font-size:1.4rem">Core Focus</h3>
+      <div class="tags">
+        <span class="tag">Meta Ads</span>
+        <span class="tag">Content Strategy</span>
+        <span class="tag">Social Media Management</span>
+        <span class="tag">Creative Design</span>
+        <span class="tag">Brand Positioning</span>
+        <span class="tag">Copywriting</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-sub">
+        Strategy-led marketing services tailored for modern brands that want attention, engagement, and measurable growth.
+      </p><div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">✍️</div>
+      <h3>Content Writing</h3>
+      <p>Scroll-stopping captions, ad copy, landing page content, and storytelling built to hold attention and drive action.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <h3>Meta Ads Management</h3>
+      <p>End-to-end Facebook and Instagram ad campaign management focused on conversions, reach, and audience targeting.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Management</h3>
+      <p>Strategic content planning, posting systems, growth direction, and community engagement across platforms.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Creative Design</h3>
+      <p>Ad creatives, social media graphics, campaign visuals, and content systems designed for modern digital brands.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Marketing Strategy</h3>
+      <p>Audience positioning, campaign planning, content systems, and growth frameworks tailored to business goals.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <h3>Brand Growth Support</h3>
+      <p>Helping emerging brands strengthen visibility, improve messaging, and build consistent digital presence.</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Portfolio & Case Studies</h2>
+      <p class="section-sub">
+        Selected campaign concepts, content systems, and growth-focused projects across multiple industries.
+      </p><div class="portfolio-grid">
+    <div class="portfolio-card">
+      <h3>EdTech Enrollment Campaign</h3>
+      <p>Built a parent-focused Meta campaign strategy for a coding education platform targeting teenagers and young learners.</p>
+      <div class="case-study">
+        <strong>Results</strong>
+        <p>Increased landing page conversion rate by 42% and reduced cost-per-lead through improved messaging and creative testing.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>Product Launch Social Strategy</h3>
+      <p>Developed a 30-day launch content system for a lifestyle brand combining reels, paid ads, and engagement content.</p>
+      <div class="case-study">
+        <strong>Results</strong>
+        <p>Generated over 180k organic impressions within the first month while improving overall audience interaction.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>Crowdfunding Awareness Campaign</h3>
+      <p>Created storytelling-focused campaign assets and paid media structures for a fundraising platform.</p>
+      <div class="case-study">
+        <strong>Results</strong>
+        <p>Expanded campaign visibility and improved engagement quality through optimized creative direction.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>Restaurant Rebranding Content System</h3>
+      <p>Designed a modern social media identity with content pillars focused on visual storytelling and retention.</p>
+      <div class="case-study">
+        <strong>Results</strong>
+        <p>Tripled engagement rate and improved repeat customer interaction across Instagram.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>Fashion Brand Ad Creative Direction</h3>
+      <p>Produced conversion-focused ad concepts and promotional visuals tailored for paid social campaigns.</p>
+      <div class="case-study">
+        <strong>Results</strong>
+        <p>Improved click-through rate and reduced ad fatigue through structured creative refresh systems.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>Service Business Lead Funnel</h3>
+      <p>Planned a customer acquisition system combining WhatsApp marketing with Meta lead campaigns.</p>
+      <div class="case-study">
+        <strong>Results</strong>
+        <p>Increased qualified inquiries while reducing user drop-off during the inquiry stage.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2 class="section-title" style="margin-bottom:12px">Let's Build Something Great</h2>
+          <p>
+            Whether you need paid ads, content strategy, or a stronger digital presence — let's discuss how your brand can grow online.
+          </p><div class="contact-links">
+        <a class="contact-link" href="https://wa.me/2348135603931" target="_blank">
+          WhatsApp — +2348135603931
+        </a>
+
+        <a class="contact-link" href="https://www.linkedin.com/in/olamide-kelani-2338b42a7" target="_blank">
+          LinkedIn — Kelani AbdulGaniyy Olamide
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3 style="font-size:1.8rem;margin-bottom:18px;letter-spacing:-.05em">
+        Modern marketing isn't about posting more.
+      </h3>
+
+      <p>
+        It's about creating systems people actually respond to — campaigns that feel intentional, content that earns attention, and strategy that turns visibility into business growth.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </section>  <footer>
+    © 2026 Kelani AbdulGaniyy Olamide — Digital Marketing Strategist
+  </footer>
+</body>
+</html>      align-items: center;
       gap: 0.8rem;
       margin-bottom: 2rem;
     }
