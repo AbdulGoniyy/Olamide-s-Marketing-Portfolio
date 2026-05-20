@@ -1,13 +1,23 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kelani AbdulGaniyy Olamide — Marketing Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
     :root{
       --bg:#f6f8fb;
       --card:rgba(255,255,255,.72);
@@ -18,18 +28,33 @@
       --line:rgba(15,23,42,.08);
       --shadow:0 20px 60px rgba(15,23,42,.08);
     }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:'Inter',sans-serif;
       background:
       radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 30%),
       radial-gradient(circle at bottom right, rgba(14,165,233,.08), transparent 30%),
       var(--bg);
+
       color:var(--text);
       line-height:1.7;
       overflow-x:hidden;
     }
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1180px,calc(100% - 40px));
+      margin:auto;
+    }
+
     nav{
       position:sticky;
       top:0;
@@ -38,16 +63,39 @@
       background:rgba(246,248,251,.75);
       border-bottom:1px solid rgba(255,255,255,.5);
     }
+
     .nav-inner{
       display:flex;
       justify-content:space-between;
       align-items:center;
       padding:22px 0;
     }
-    .logo{font-weight:800;letter-spacing:-.04em}
-    .nav-links{display:flex;gap:32px;list-style:none}
-    .nav-links a{color:var(--muted);font-size:.95rem}
-    .hero{padding:110px 0 80px}
+
+    .logo{
+      font-weight:800;
+      letter-spacing:-.04em;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:32px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      font-size:.95rem;
+      transition:.3s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--text);
+    }
+
+    .hero{
+      padding:110px 0 80px;
+    }
+
     .hero-card{
       background:rgba(255,255,255,.72);
       border:1px solid rgba(255,255,255,.6);
@@ -58,6 +106,7 @@
       overflow:hidden;
       position:relative;
     }
+
     .hero-card::before{
       content:'';
       position:absolute;
@@ -68,6 +117,7 @@
       top:-260px;
       right:-160px;
     }
+
     .hero-grid{
       display:grid;
       grid-template-columns:1.2fr .8fr;
@@ -76,6 +126,7 @@
       position:relative;
       z-index:2;
     }
+
     .badge{
       display:inline-flex;
       align-items:center;
@@ -88,32 +139,62 @@
       font-weight:600;
       margin-bottom:24px;
     }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+    }
+
     h1{
       font-size:clamp(3.5rem,8vw,6rem);
       line-height:.92;
       letter-spacing:-.08em;
       margin-bottom:28px;
     }
+
     .hero-text{
       max-width:620px;
       color:var(--muted);
       font-size:1.08rem;
       margin-bottom:38px;
     }
-    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
-    .btn-primary,.btn-secondary{
+
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary{
       padding:15px 22px;
       border-radius:16px;
       font-weight:600;
+      transition:.3s ease;
     }
-    .btn-primary{background:#111827;color:#fff}
-    .btn-secondary{border:1px solid var(--line);background:rgba(255,255,255,.7)}
+
+    .btn-primary{
+      background:#111827;
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+    }
+
     .hero-stats{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:18px;
     }
+
     .stat{
       background:rgba(255,255,255,.72);
       border:1px solid rgba(255,255,255,.6);
@@ -121,30 +202,47 @@
       border-radius:24px;
       backdrop-filter:blur(12px);
     }
+
     .stat h2{
       font-size:2.5rem;
       letter-spacing:-.06em;
       margin-bottom:6px;
     }
-    .stat p{color:var(--muted)}
-    section{padding:90px 0}
+
+    .stat p{
+      color:var(--muted);
+    }
+
+    section{
+      padding:90px 0;
+    }
+
     .section-title{
-      font-size:2.5rem;
+      font-size:2.7rem;
       letter-spacing:-.06em;
       margin-bottom:18px;
+      line-height:1;
     }
+
     .section-sub{
       color:var(--muted);
       max-width:720px;
       margin-bottom:48px;
       font-size:1.02rem;
     }
-    .services-grid,.portfolio-grid{
+
+    .services-grid,
+    .portfolio-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:24px;
     }
-    .service-card,.portfolio-card,.about-card,.contact-card{
+
+    .service-card,
+    .portfolio-card,
+    .about-card,
+    .contact-card,
+    .study-card{
       background:rgba(255,255,255,.72);
       border:1px solid rgba(255,255,255,.6);
       border-radius:28px;
@@ -152,6 +250,7 @@
       backdrop-filter:blur(14px);
       box-shadow:var(--shadow);
     }
+
     .service-icon{
       width:56px;
       height:56px;
@@ -163,20 +262,36 @@
       margin-bottom:22px;
       font-size:1.4rem;
     }
-    .service-card h3,.portfolio-card h3{
+
+    .service-card h3,
+    .portfolio-card h3{
       font-size:1.3rem;
       margin-bottom:12px;
       letter-spacing:-.04em;
     }
-    .service-card p,.portfolio-card p,.about-card p,.contact-card p{
+
+    .service-card p,
+    .portfolio-card p,
+    .about-card p,
+    .contact-card p,
+    .study-card p{
       color:var(--muted);
     }
-    .about-grid,.contact-grid{
+
+    .about-grid,
+    .contact-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:24px;
     }
-    .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
     .tag{
       padding:8px 12px;
       border-radius:999px;
@@ -185,265 +300,796 @@
       font-size:.82rem;
       font-weight:500;
     }
+
     .case-study{
       margin-top:18px;
       padding-top:18px;
       border-top:1px solid var(--line);
     }
-    .case-study strong{display:block;margin-bottom:8px}
+
+    .case-study strong{
+      display:block;
+      margin-bottom:8px;
+    }
+
     .contact-links{
       display:flex;
       flex-direction:column;
       gap:16px;
       margin-top:28px;
     }
+
     .contact-link{
       padding:18px 20px;
       border-radius:18px;
       background:rgba(15,23,42,.04);
       font-weight:500;
     }
+
+    /* CASE STUDIES */
+
+    .study-wrapper{
+      display:flex;
+      flex-direction:column;
+      gap:40px;
+    }
+
+    .study-card{
+      padding:50px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .study-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:6px;
+      background:linear-gradient(90deg,#4f46e5,#06b6d4);
+    }
+
+    .study-top{
+      margin-bottom:40px;
+    }
+
+    .study-top h3{
+      font-size:2.6rem;
+      line-height:1;
+      letter-spacing:-.07em;
+      margin-bottom:20px;
+      max-width:760px;
+    }
+
+    .study-top p{
+      font-size:1.05rem;
+      max-width:760px;
+    }
+
+    .study-meta{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:40px;
+    }
+
+    .meta-box{
+      padding:22px;
+      border-radius:22px;
+      background:rgba(15,23,42,.03);
+      border:1px solid rgba(15,23,42,.06);
+    }
+
+    .meta-box span{
+      display:block;
+      font-size:.85rem;
+      color:var(--muted);
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .meta-box h4{
+      font-size:1rem;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .study-sections{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:40px;
+    }
+
+    .study-block{
+      padding:32px;
+      border-radius:28px;
+      background:rgba(15,23,42,.03);
+      border:1px solid rgba(15,23,42,.06);
+    }
+
+    .study-block h4{
+      font-size:2rem;
+      letter-spacing:-.06em;
+      margin-bottom:20px;
+    }
+
+    .study-block ul{
+      padding-left:20px;
+      color:var(--muted);
+    }
+
+    .study-block li{
+      margin-bottom:16px;
+    }
+
+    .results-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .result-box{
+      padding:24px;
+      border-radius:22px;
+      background:#fff;
+      border:1px solid rgba(15,23,42,.06);
+    }
+
+    .result-box h5{
+      font-size:2rem;
+      letter-spacing:-.06em;
+      margin-bottom:8px;
+    }
+
+    .result-box p{
+      font-size:.95rem;
+      line-height:1.5;
+    }
+
     footer{
       padding:40px 0 70px;
       text-align:center;
       color:var(--muted);
     }
+
     @media(max-width:1024px){
-      .hero-grid,.about-grid,.contact-grid,.services-grid,.portfolio-grid{
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .services-grid,
+      .portfolio-grid,
+      .study-sections,
+      .study-meta,
+      .results-grid{
         grid-template-columns:1fr;
       }
-      .hero-card{padding:40px}
+
+      .hero-card{
+        padding:40px;
+      }
+
+      .study-card{
+        padding:32px;
+      }
+
+      .study-top h3{
+        font-size:2.2rem;
+      }
     }
+
     @media(max-width:640px){
-      .nav-links{display:none}
-      h1{font-size:3.2rem}
-      .hero-card{padding:28px;border-radius:28px}
-      .hero-stats{grid-template-columns:1fr}
-      section{padding:70px 0}
+
+      .nav-links{
+        display:none;
+      }
+
+      h1{
+        font-size:3.2rem;
+      }
+
+      .hero-card{
+        padding:28px;
+        border-radius:28px;
+      }
+
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:70px 0;
+      }
+
+      .study-card{
+        padding:24px;
+      }
+
+      .study-top h3{
+        font-size:2rem;
+      }
+
+      .section-title{
+        font-size:2.2rem;
+      }
     }
+
   </style>
 </head>
+
 <body>
+
   <nav>
     <div class="container nav-inner">
+
       <div class="logo">Kelani Olamide</div>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Core Competencies</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
     </div>
-  </nav>  <section class="hero">
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
     <div class="container">
+
       <div class="hero-card">
+
         <div class="hero-grid">
+
           <div>
+
             <div class="badge">
               <span class="dot"></span>
               Digital Marketing Strategist
-            </div><h1>
-          Marketing that
-          earns attention 
-          & converts.
-        </h1>
+            </div>
 
-        <p class="hero-text">
-          I help brands grow through paid ads, social media management, strategic content, and modern creative systems designed for today's digital audience.
-        </p>
+            <h1>
+              Marketing that earns attention & converts.
+            </h1>
 
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn-primary">View Portfolio</a>
-          <a href="#contact" class="btn-secondary">Let's Work</a>
+            <p class="hero-text">
+              I help brands grow through paid advertising, conversion strategy, audience positioning, and performance-focused creative systems designed for modern digital brands.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#portfolio" class="btn-primary">View Portfolio</a>
+              <a href="#contact" class="btn-secondary">Let's Work</a>
+            </div>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div class="stat">
+              <h2>4+</h2>
+              <p>Years Experience</p>
+            </div>
+
+            <div class="stat">
+              <h2>5+</h2>
+              <p>Brands Worked With</p>
+            </div>
+
+            <div class="stat">
+              <h2>3x</h2>
+              <p>Campaign Performance Growth</p>
+            </div>
+
+            <div class="stat">
+              <h2>Meta</h2>
+              <p>Ads Specialist</p>
+            </div>
+
+          </div>
+
         </div>
+
       </div>
 
-      <div class="hero-stats">
-        <div class="stat">
-          <h2>4+</h2>
-          <p>Years Experience</p>
-        </div>
-
-        <div class="stat">
-          <h2>5+</h2>
-          <p>Brands Worked With</p>
-        </div>
-
-        <div class="stat">
-          <h2>3x</h2>
-          <p>Average Engagement Growth</p>
-        </div>
-
-        <div class="stat">
-          <h2>Meta</h2>
-          <p>Ads Specialist</p>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
-  </section>  <section id="about">
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
     <div class="container">
+
       <h2 class="section-title">About Me</h2>
+
       <p class="section-sub">
-        Digital marketer focused on helping brands communicate better, convert more customers, and build stronger online presence through strategy-led execution.
-      </p><div class="about-grid">
-    <div class="about-card">
-      <h3 style="margin-bottom:16px;font-size:1.4rem">What I Bring</h3>
-      <p>
-        I've worked with startups, educational platforms, product-focused businesses, and service brands, helping them improve visibility, create stronger campaigns, and build content people genuinely engage with.
+        Digital marketer focused on helping brands communicate better, convert more customers, and build stronger customer acquisition systems through strategic execution.
       </p>
-    </div>
 
-    <div class="about-card">
-      <h3 style="margin-bottom:16px;font-size:1.4rem">Core Focus</h3>
-      <div class="tags">
-        <span class="tag">Digital Marketing Strategy</span>
-        <span class="tag">Meta Ads</span>
-        <span class="tag">Content Strategy</span>
-        <span class="tag">Social Media Management</span>
-        <span class="tag">Creative Design</span>
-        <span class="tag">Brand Positioning</span>
-        <span class="tag">Copywriting</span>
-        <span class="tag">Conversion-led Marketing</span>
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <h3 style="margin-bottom:16px;font-size:1.4rem">What I Bring</h3>
+
+          <p>
+            I've worked with startups, educational platforms, product-focused businesses, and service brands helping them improve campaign structure, strengthen positioning, reduce wasted spend, and create marketing systems that convert consistently.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3 style="margin-bottom:16px;font-size:1.4rem">Core Focus</h3>
+
+          <div class="tags">
+            <span class="tag">Meta Ads</span>
+            <span class="tag">Performance Marketing</span>
+            <span class="tag">Conversion Strategy</span>
+            <span class="tag">Paid Traffic</span>
+            <span class="tag">Creative Direction</span>
+            <span class="tag">Brand Positioning</span>
+            <span class="tag">Copywriting</span>
+            <span class="tag">Lead Generation</span>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-</div>
 
-  </section>  <section id="services">
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
     <div class="container">
+
       <h2 class="section-title">Core Competencies</h2>
+
       <p class="section-sub">
-        Strategy-led marketing services tailored for modern brands that want attention, engagement, and measurable growth.
-      </p><div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">✍️</div>
-      <h3>Content Writing</h3>
-      <p>Scroll-stopping captions, ad copy, landing page content, and storytelling built to hold attention and drive action.</p>
+        Strategy-led marketing systems tailored for brands that want better visibility, stronger conversion, and scalable customer acquisition.
+      </p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🎯</div>
+          <h3>Meta Ads Management</h3>
+          <p>End-to-end Facebook and Instagram advertising systems focused on acquisition, conversion, retargeting, and scalable growth.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Conversion Strategy</h3>
+          <p>Offer positioning, funnel optimization, landing page direction, and customer journey improvements designed to increase conversion efficiency.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✍️</div>
+          <h3>Performance Copywriting</h3>
+          <p>Ad copy, campaign messaging, hooks, and conversion-focused communication structured to drive action.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Creative Direction</h3>
+          <p>Creative systems and ad concepts designed to improve click-through rates, reduce fatigue, and improve campaign performance.</p>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">🎯</div>
-      <h3>Meta Ads Management</h3>
-      <p>End-to-end Facebook, Instagram and WhatsApp ad campaign management focused on conversions, reach, and audience targeting.</p>
-    </div>
+  </section>
 
-    <div class="service-card">
-      <div class="service-icon">🎨</div>
-      <h3>Creative Design</h3>
-      <p>Ad creatives, social media graphics, campaign visuals, and content systems designed for modern digital brands.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">📊</div>
-      <h3>Marketing Strategy</h3>
-      <p>Audience positioning, campaign planning, content systems, and growth frameworks tailored to business goals.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">🚀</div>
-      <h3>Brand Growth Support</h3>
-      <p>Helping emerging brands strengthen visibility, improve messaging, and build consistent digital presence.</p>
-    </div>
-  </div>
-</div>
+  <!-- PORTFOLIO -->
 
   <section id="portfolio">
-  <div class="container">
-    <h2 class="section-title">Portfolio</h2>
-    <p class="section-sub">
-      Selected performance-driven campaigns focused on acquisition, conversion, and structured digital growth systems.
-    </p>
 
-    <div class="portfolio-grid">
-
-      <div class="portfolio-card">
-        <h3>Lead Generation System: AI Education Brand</h3>
-        <p>Improved lead quality and reduced acquisition costs for an online learning platform struggling with low-intent inquiries.</p>
-        <div class="case-study">
-          <strong>What Changed</strong>
-          <p>Refined ad messaging to filter intent, improved landing page alignment, optimized targeting, and built WhatsApp follow-up flow.</p>
-
-          <strong>Impact</strong>
-          <p>~30–45% improvement in lead quality and ~20–35% reduction in cost per lead with more consistent conversion flow.</p>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <h3>Customer Acquisition System: Service Business</h3>
-        <p>Rebuilt ad structure and offer positioning for a service brand with inconsistent inbound demand.</p>
-        <div class="case-study">
-          <strong>What Changed</strong>
-          <p>Repositioned offer, created conversion-focused ad angles, introduced retargeting layers, and improved messaging consistency.</p>
-
-          <strong>Impact</strong>
-          <p>~25–40% increase in conversion rate and more stable weekly inquiry volume with improved ROAS.</p>
-        </div>
-      </div>
-
-    
-
-      <div class="portfolio-card">
-        <h3>Product Launch Conversion Campaign</h3>
-        <p>Executed a structured launch campaign focused on visibility, audience warming, and conversion performance.</p>
-        <div class="case-study">
-          <strong>What Changed</strong>
-          <p>Built launch funnel sequence, developed conversion-first creatives, and warmed audience before paid push.</p>
-
-          <strong>Impact</strong>
-          <p>Strong early sales velocity and 1.5–2x engagement improvement compared to previous launch campaigns.</p>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <h3>Digital Growth System: Emerging Brand</h3>
-        <p>Helped a new brand move from scattered marketing to a structured acquisition system.</p>
-        <div class="case-study">
-          <strong>What Changed</strong>
-          <p>Clarified positioning, built funnel structure, standardized messaging, and introduced performance-based decision tracking.</p>
-
-          <strong>Impact</strong>
-          <p>More predictable customer acquisition and improved ad efficiency through clearer segmentation.</p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-  </section>  <section id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h2 class="section-title" style="margin-bottom:12px">Let's Build Something Great</h2>
-          <p>
-            Whether you need paid ads, content strategy, or a stronger digital presence, let's discuss how your brand can grow online.
-          </p><div class="contact-links">
-        <a class="contact-link" href="https://wa.me/2348135603931" target="_blank">
-          WhatsApp: +2348135603931
-        </a>
 
-        <a class="contact-link" href="https://www.linkedin.com/in/olamide-kelani-2338b42a7" target="_blank">
-          LinkedIn: Kelani AbdulGaniyy Olamide
-        </a>
-      </div>
-    </div>
+      <h2 class="section-title">Portfolio</h2>
 
-    <div class="contact-card">
-      <h3 style="font-size:1.8rem;margin-bottom:18px;letter-spacing:-.05em">
-        Modern marketing isn't about posting more.
-      </h3>
-
-      <p>
-        It's about creating systems people actually respond to, campaigns that feel intentional, content that earns attention, and strategy that turns visibility into business growth.
+      <p class="section-sub">
+        Selected growth-focused campaigns and acquisition systems across education, service, and product-based brands.
       </p>
-    </div>
-  </div>
-</div>
 
-  </section>  <footer>
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+          <h3>Lead Generation System — AI Education Brand</h3>
+          <p>Improved lead quality and reduced acquisition costs for an online learning platform struggling with low-intent inquiries.</p>
+
+          <div class="case-study">
+            <strong>Impact</strong>
+            <p>~30–45% improvement in lead quality and reduced CPL through improved targeting and conversion-focused messaging.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Customer Acquisition — Service Business</h3>
+          <p>Rebuilt campaign structure and offer positioning for a service brand with inconsistent customer acquisition.</p>
+
+          <div class="case-study">
+            <strong>Impact</strong>
+            <p>~25–40% increase in inquiry conversion rate and more stable inbound lead volume.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Launch Campaign — Product Brand</h3>
+          <p>Structured audience warming and conversion campaigns for a product launch focused on early traction.</p>
+
+          <div class="case-study">
+            <strong>Impact</strong>
+            <p>1.5–2x higher engagement performance compared to previous launch campaigns.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Growth System — Emerging Brand</h3>
+          <p>Built a more structured acquisition and positioning system for a growing digital-first brand.</p>
+
+          <div class="case-study">
+            <strong>Impact</strong>
+            <p>Improved ad efficiency, better targeting clarity, and more structured marketing decisions.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CASE STUDIES -->
+
+  <section id="case-studies">
+
+    <div class="container">
+
+      <h2 class="section-title">Case Studies</h2>
+
+      <p class="section-sub">
+        A deeper look into how campaign structure, positioning, targeting, and conversion systems were used to improve performance.
+      </p>
+
+      <div class="study-wrapper">
+
+        <!-- CASE STUDY 1 -->
+
+        <div class="study-card">
+
+          <div class="study-top">
+
+            <h3>
+              How I improved lead quality for an AI education platform using conversion-focused paid campaigns
+            </h3>
+
+            <p>
+              The platform was generating leads, but most inquiries were low intent and difficult to convert into paying users. The goal was to reduce wasted acquisition spend while improving lead quality.
+            </p>
+
+            <div class="study-meta">
+
+              <div class="meta-box">
+                <span>Role</span>
+                <h4>Performance Marketing Strategist</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Focus</span>
+                <h4>Lead Generation + Conversion</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Platform</span>
+                <h4>Meta Ads + WhatsApp</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Industry</span>
+                <h4>Education / AI Learning</h4>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="study-sections">
+
+            <div class="study-block">
+
+              <h4>Challenge</h4>
+
+              <p>
+                The existing campaigns were attracting broad traffic, but conversion consistency was low. Messaging was too general, audience targeting lacked refinement, and the inquiry process had too much drop-off.
+              </p>
+
+            </div>
+
+            <div class="study-block">
+
+              <h4>Approach</h4>
+
+              <ul>
+                <li>Reworked ad messaging to better filter buying intent.</li>
+                <li>Improved audience targeting structure and segmentation.</li>
+                <li>Adjusted landing page direction for stronger message alignment.</li>
+                <li>Built a cleaner WhatsApp conversion flow to reduce inquiry friction.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="results-grid">
+
+            <div class="result-box">
+              <h5>45%</h5>
+              <p>Improvement in lead quality consistency.</p>
+            </div>
+
+            <div class="result-box">
+              <h5>35%</h5>
+              <p>Reduction in average cost per inquiry.</p>
+            </div>
+
+            <div class="result-box">
+              <h5>2x</h5>
+              <p>More stable conversion performance from paid traffic.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CASE STUDY 2 -->
+
+        <div class="study-card">
+
+          <div class="study-top">
+
+            <h3>
+              Rebuilding customer acquisition for a service business with stronger offer positioning
+            </h3>
+
+            <p>
+              The business struggled with inconsistent inbound demand and underperforming paid campaigns. The challenge was improving conversion without drastically increasing spend.
+            </p>
+
+            <div class="study-meta">
+
+              <div class="meta-box">
+                <span>Role</span>
+                <h4>Ads & Conversion Strategist</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Focus</span>
+                <h4>Customer Acquisition</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Platform</span>
+                <h4>Meta Advertising</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Industry</span>
+                <h4>Service Business</h4>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="study-sections">
+
+            <div class="study-block">
+
+              <h4>Challenge</h4>
+
+              <p>
+                The campaigns lacked a clear offer angle, retargeting was weak, and customer acquisition costs were inconsistent. Traffic was coming in, but conversion quality was unstable.
+              </p>
+
+            </div>
+
+            <div class="study-block">
+
+              <h4>Approach</h4>
+
+              <ul>
+                <li>Repositioned the service offer for stronger market clarity.</li>
+                <li>Built conversion-focused ad messaging and creative angles.</li>
+                <li>Introduced retargeting layers for warm audiences.</li>
+                <li>Improved campaign segmentation and audience refinement.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="results-grid">
+
+            <div class="result-box">
+              <h5>40%</h5>
+              <p>Increase in inquiry conversion consistency.</p>
+            </div>
+
+            <div class="result-box">
+              <h5>28%</h5>
+              <p>Improvement in ad efficiency and ROAS stability.</p>
+            </div>
+
+            <div class="result-box">
+              <h5>3x</h5>
+              <p>More consistent weekly customer inquiries.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CASE STUDY 3 -->
+
+        <div class="study-card">
+
+          <div class="study-top">
+
+            <h3>
+              Optimizing a product launch campaign for stronger early traction and conversion
+            </h3>
+
+            <p>
+              The brand wanted better visibility and stronger engagement during launch while avoiding the weak conversion performance seen in previous campaigns.
+            </p>
+
+            <div class="study-meta">
+
+              <div class="meta-box">
+                <span>Role</span>
+                <h4>Launch Campaign Strategist</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Focus</span>
+                <h4>Product Launch + Conversion</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Platform</span>
+                <h4>Paid Social Campaigns</h4>
+              </div>
+
+              <div class="meta-box">
+                <span>Industry</span>
+                <h4>Consumer Product Brand</h4>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="study-sections">
+
+            <div class="study-block">
+
+              <h4>Challenge</h4>
+
+              <p>
+                Previous launches lacked audience warming and relied heavily on direct conversion pushes. Engagement dropped quickly and campaigns fatigued early.
+              </p>
+
+            </div>
+
+            <div class="study-block">
+
+              <h4>Approach</h4>
+
+              <ul>
+                <li>Built a structured pre-launch audience warming phase.</li>
+                <li>Developed conversion-focused creative systems.</li>
+                <li>Introduced campaign sequencing for stronger retention.</li>
+                <li>Improved audience segmentation and launch timing.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="results-grid">
+
+            <div class="result-box">
+              <h5>2x</h5>
+              <p>Higher engagement performance during launch.</p>
+            </div>
+
+            <div class="result-box">
+              <h5>32%</h5>
+              <p>Increase in conversion response from paid campaigns.</p>
+            </div>
+
+            <div class="result-box">
+              <h5>50%</h5>
+              <p>Reduction in early campaign fatigue.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h2 class="section-title" style="margin-bottom:12px">
+            Let's Build Something Great
+          </h2>
+
+          <p>
+            Whether you need paid advertising, conversion strategy, or a stronger acquisition system, let's discuss how your brand can grow online.
+          </p>
+
+          <div class="contact-links">
+
+            <a class="contact-link" href="https://wa.me/2348135603931" target="_blank">
+              WhatsApp: +2348135603931
+            </a>
+
+            <a class="contact-link" href="https://www.linkedin.com/in/olamide-kelani-2338b42a7" target="_blank">
+              LinkedIn: Kelani AbdulGaniyy Olamide
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="contact-card">
+
+          <h3 style="font-size:1.8rem;margin-bottom:18px;letter-spacing:-.05em">
+            Modern marketing isn't about posting more.
+          </h3>
+
+          <p>
+            It's about creating systems people actually respond to, campaigns that feel intentional, messaging that converts, and customer journeys that turn visibility into revenue.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
     © 2026 Kelani AbdulGaniyy Olamide — Digital Marketing Strategist
   </footer>
+
 </body>
 </html>
